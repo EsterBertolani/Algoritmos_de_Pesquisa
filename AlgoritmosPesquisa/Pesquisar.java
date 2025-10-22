@@ -1,33 +1,6 @@
 package AlgoritmosPesquisa;
 
-import Dados.*;
-
-/* pesq. sequencial, melhorada e binária */
-
 public class Pesquisar {
-
-    // public static void main(String[] args) {
-
-    // int[] vetor = { 10, 5, 15, 25, 7, 14, 30, 2, 19, 22 };
-    // int[] vetor2 = { 2, 5, 7, 10, 14, 15, 19, 22, 25, 30 };
-
-    // System.out.println(pesquisaSequencial(10, vetor));
-    // System.out.println(pesquisaSequencial(7, vetor));
-    // System.out.println(pesquisaSequencial(22, vetor));
-    // System.out.println(pesquisaSequencial(100, vetor));
-
-    // System.out.println("=======================");
-    // System.out.println(pesquisaMelhorada(2, vetor2));
-    // System.out.println(pesquisaMelhorada(14, vetor2));
-    // System.out.println(pesquisaMelhorada(30, vetor2));
-    // System.out.println(pesquisaMelhorada(21, vetor2));
-
-    // System.out.println("=======================");
-    // System.out.println(pesquisaBinaria(2, vetor2));
-    // System.out.println(pesquisaBinaria(14, vetor2));
-    // System.out.println(pesquisaBinaria(30, vetor2));
-    // System.out.println(pesquisaBinaria(21, vetor2));
-    // }
 
     public static boolean pesquisaSequencial(int num, int[] vetor) {
         int i = 0;
@@ -79,3 +52,4 @@ public class Pesquisar {
     }
 
 }
+
