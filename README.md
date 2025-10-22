@@ -51,10 +51,13 @@ o Ao final, exiba um relatório comparativo simples mostrando qual foi mais efic
 • Organização do Código: O projeto deve ser modular, ou seja, dividido em classes e métodos
 que separem as responsabilidades (ex: uma classe para os algoritmos, uma classe principal com
 o menu, etc.).
+
 • Tratamento de Erros: A aplicação deve ser robusta, utilizando try-catch para lidar com
 possíveis erros, como arquivos não encontrados (FileNotFoundException) ou entradas
 inválidas do usuário (ex: digitar texto em vez de número).
+
 • Escalabilidade: Seu código deve funcionar eficientemente mesmo com vetores grandes (teste
 com pelo menos 10.000 elementos para ver a diferença de desempenho!).
+
 • Comentários: Adicione comentários em partes importantes do seu código para explicar o que
 cada método faz e as decisões que você tomou
