@@ -1,4 +1,4 @@
-# Algoritmos_de_Pesquisa
+# Algoritmos de Pesquisa
 Trabalho C2 da matéria Pesquisa e Ordenação
 
 Desenvolver uma aplicação em Java que funcione através de um menu interativo, oferecendo ao
