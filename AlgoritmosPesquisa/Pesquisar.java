@@ -2,44 +2,47 @@ package AlgoritmosPesquisa;
 
 public class Pesquisar {
 
-    public static boolean pesquisaSequencial(int num, int[] vetor) {
+    public static int pesquisaSequencial(int num, int[] vetor) {
         int i = 0;
+        int pos = 0;
         while (i < vetor.length) {
             if (num == vetor[i]) {
-                return true;
+                return pos;
             }
             i++;
+            pos++;
         }
-        return false;
+        return -1;
     }
 
-
-    public static boolean pesquisaMelhorada(int num, int[] vetor) {
+    public static int pesquisaMelhorada(int num, int[] vetor) { // não retornou na última posição
         int i = 0;
+        int pos = 0;
         while (i < vetor.length) {
             if (num == vetor[i]) {
-                return true;
+                return pos;
             }
             if (num < vetor[i]) {
-                return false;
+                return -1;
             }
             i++;
+            pos++;
         }
-        return false;
+        return -1;
     }
 
-    public static boolean pesquisaBinaria(int num, int[] vetor) {
+    public static int pesquisaBinaria(int num, int[] vetor) {
         int inicio = 0, fim = vetor.length - 1;
         int meio;
 
         if (num > vetor[fim]) {
-            return false;
+            return -1;
         } else {
             while (inicio <= fim) {
                 meio = (inicio + fim) / 2;
 
                 if (num == vetor[meio]) {
-                    return true;
+                    return meio;
                 }
 
                 if (num < vetor[meio]) {
@@ -48,7 +51,7 @@ public class Pesquisar {
                     inicio = meio + 1;
                 }
             }
-            return false;
+            return -1;
         }
     }
 
