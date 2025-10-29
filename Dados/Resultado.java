@@ -1,4 +1,4 @@
-package AlgoritmosPesquisa;
+package Dados;
 
 public class Resultado {
 
