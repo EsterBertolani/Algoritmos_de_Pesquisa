@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import AlgoritmosPesquisa.Ordenadores;
 
 public class ManipulaArquivo {
 
@@ -15,8 +16,8 @@ public class ManipulaArquivo {
         int[] numeros = gerarNum(qtdNum);
 
         try (BufferedWriter gerar = new BufferedWriter(new FileWriter(nomeArquivo))) {
-            for (int i : numeros) {
-                gerar.write(String.valueOf(i));
+            for (int num : numeros) {
+                gerar.write(String.valueOf(num));
                 gerar.newLine();
             }
             return "Arquivo \"" + nomeArquivo + "\" criado com sucesso contendo " + numeros.length + " números!";
@@ -27,7 +28,7 @@ public class ManipulaArquivo {
     }
 
     public static int[] lerArquivo(String nomeArquivo)
-            throws IOException, FileNotFoundException {
+            throws IOException, FileNotFoundException { // nn pode usar o try sem isso aqui
 
         int[] numeros = new int[tamArquivo(nomeArquivo)];
 
@@ -40,17 +41,29 @@ public class ManipulaArquivo {
                 i++;
             }
         }
-
         if (numeros.length > 0) {
             return numeros;
         } else {
-            return null;
+            return null; // pra tratar os erros lá na frente
         }
 
     }
 
-    public static String ordenarArquivo(String nomeArquivo) {
-        return "";
+    public static int[] ordenarArquivo(String nomeArquivo)
+            throws IOException, FileNotFoundException {
+        int tam = tamArquivo(nomeArquivo);
+        int[] vetor = lerArquivo(nomeArquivo);
+
+        if (vetor != null) {
+            if (tam < 1000) { // se o tamanho do vetor for "pequeno",
+                Ordenadores.insercaoDireta(vetor); // usa inserção direta pra ordenar
+            } else {
+                Ordenadores.quicksort(vetor); // se não, quicksort
+            }
+            return vetor;
+        } else {
+            return null;
+        }
     }
 
     // ================== Métodos private auxiliares ==================
