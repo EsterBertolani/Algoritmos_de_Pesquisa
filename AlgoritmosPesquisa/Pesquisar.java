@@ -13,6 +13,7 @@ public class Pesquisar {
         return false;
     }
 
+
     public static boolean pesquisaMelhorada(int num, int[] vetor) {
         int i = 0;
         while (i < vetor.length) {
@@ -28,7 +29,7 @@ public class Pesquisar {
     }
 
     public static boolean pesquisaBinaria(int num, int[] vetor) {
-        int inicio = 0, fim = (vetor.length - 1);
+        int inicio = 0, fim = vetor.length - 1;
         int meio;
 
         if (num > vetor[fim]) {
@@ -42,9 +43,9 @@ public class Pesquisar {
                 }
 
                 if (num < vetor[meio]) {
-                    fim = (meio - 1);
+                    fim = meio - 1;
                 } else {
-                    inicio = (meio + 1);
+                    inicio = meio + 1;
                 }
             }
             return false;
@@ -52,4 +53,3 @@ public class Pesquisar {
     }
 
 }
-
