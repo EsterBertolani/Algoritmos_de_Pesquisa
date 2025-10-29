@@ -57,6 +57,19 @@ public class ManipulaArquivo {
 
     }
 
+    public static int[] ordenarVetor(int[] vetor) {
+        if (vetor != null) {
+            if (vetor.length < 1000) {
+                Ordenadores.insercaoDireta(vetor);
+            } else {
+                Ordenadores.quicksort(vetor);
+            }
+            return vetor;
+        } else {
+            return null;
+        }
+    }
+
     public static int[] ordenarArquivo(String nomeArquivo)
             throws IOException, FileNotFoundException {
         int tam = tamArquivo(nomeArquivo);
@@ -74,7 +87,7 @@ public class ManipulaArquivo {
         }
     }
 
-    // ================== Métodos private auxiliares ==================
+    // ================== Métodos private / auxiliares ==================
 
     private static int tamArquivo(String nomeArquivo) { // pra ver quantas linhas o arquivo tem
         int cont = 0; // e basear o tamanho do vetor a partir disso
@@ -86,6 +99,14 @@ public class ManipulaArquivo {
             return 0;
         }
         return cont;
+    }
+
+    public static String toString(int[] numeros) {
+        String msg = "| ";
+        for (int i : numeros) {
+            msg += i + " | ";
+        }
+        return msg;
     }
 
 }
