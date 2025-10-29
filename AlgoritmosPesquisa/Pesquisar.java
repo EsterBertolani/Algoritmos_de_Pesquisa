@@ -15,7 +15,7 @@ public class Pesquisar {
         return -1;
     }
 
-    public static int pesquisaMelhorada(int num, int[] vetor) { // não retornou na última posição
+    public static int pesquisaMelhorada(int num, int[] vetor) { 
         int i = 0;
         int pos = 0;
         while (i < vetor.length) {
