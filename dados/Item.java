@@ -1,4 +1,4 @@
-package AlgoritmosPesquisa;
+package dados;
 
 public class Item {
     private int chave;
