@@ -12,8 +12,16 @@ public class ManipulaArquivo {
 
     // ================== Métodos de manipulação do arquivo ==================
 
+    public static int[] gerarVetor(int qtdNum) {
+        int[] numeros = new int[qtdNum];
+        for (int i = 0; i < qtdNum; i++) {
+            numeros[i] = (int) (Math.random() * 1000);
+        }
+        return numeros;
+    }
+
     public static String gerarArquivo(int qtdNum, String nomeArquivo) {
-        int[] numeros = gerarNum(qtdNum);
+        int[] numeros = gerarVetor(qtdNum);
 
         try (BufferedWriter gerar = new BufferedWriter(new FileWriter(nomeArquivo))) {
             for (int num : numeros) {
@@ -67,14 +75,6 @@ public class ManipulaArquivo {
     }
 
     // ================== Métodos private auxiliares ==================
-
-    private static int[] gerarNum(int qtdNum) {
-        int[] numeros = new int[qtdNum];
-        for (int i = 0; i < qtdNum; i++) {
-            numeros[i] = (int) (Math.random() * 1000);
-        }
-        return numeros;
-    }
 
     private static int tamArquivo(String nomeArquivo) { // pra ver quantas linhas o arquivo tem
         int cont = 0; // e basear o tamanho do vetor a partir disso
