@@ -14,6 +14,7 @@ public class Pesquisar {
         int pos = 0;
 
         while (i < vetor.length) {
+            comparacoes++;
             if (num == vetor[i]) {
                 fim = System.nanoTime();
                 tempoExecucao = fim - inicio;
@@ -35,11 +36,13 @@ public class Pesquisar {
         int i = 0;
         int pos = 0;
         while (i < vetor.length) {
+            comparacoes++;
             if (num == vetor[i]) {
                 fim = System.nanoTime();
                 tempoExecucao = fim - inicio;
                 return pos;
             }
+            comparacoes++;
             if (num < vetor[i]) {
                 fim = System.nanoTime();
                 tempoExecucao = fim - inicio;
@@ -62,19 +65,21 @@ public class Pesquisar {
         int meio;
 
         if (num > vetor[fimVet]) {
+            comparacoes++;
             fim = System.nanoTime();
             tempoExecucao = fim - inicio;
             return -1;
         } else {
             while (inicioVet <= fimVet) {
                 meio = (inicioVet + fimVet) / 2;
+                comparacoes++;
 
                 if (num == vetor[meio]) {
                     fim = System.nanoTime();
                     tempoExecucao = fim - inicio;
                     return meio;
                 }
-
+                comparacoes++;
                 if (num < vetor[meio]) {
                     fimVet = meio - 1;
                 } else {
@@ -109,6 +114,7 @@ public class Pesquisar {
             valor = vetor[pos];
             indice = valor % tamanhoTabela;
             for (int i = 0; i < capacidadeEncadeamento; i++) {
+                comparacoes++;
                 if (tabelaHash[indice][i] == -1) {
                     tabelaHash[indice][i] = valor;
                     posicoesOriginais[indice][i] = pos; // salva a posição original
@@ -120,6 +126,7 @@ public class Pesquisar {
         // Busca do valor e retorno da posição original
         int indiceBusca = valorBuscado % tamanhoTabela;
         for (int i = 0; i < capacidadeEncadeamento; i++) {
+            comparacoes++;
             if (tabelaHash[indiceBusca][i] == valorBuscado) {
                 fim = System.nanoTime();
                 tempoExecucao = fim - inicio;
