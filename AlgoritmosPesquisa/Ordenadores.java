@@ -15,6 +15,7 @@ public class Ordenadores {
                 j--;
             }
             vetor[j + 1] = temp;
+
         }
     }
 
