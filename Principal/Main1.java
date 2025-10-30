@@ -109,7 +109,7 @@ public class Main1 {
             }
         }
 
-        System.out.println("🔎 Maior: " + maior + " | Menor: " + menor + " | Moda: " + moda);
+        System.out.println("Maior: " + maior + " | Menor: " + menor + " | Moda: " + moda);
     }
 
     private static void pesquisarValor(Scanner sc, int[] vetor, Pesquisar pesquisar) {
@@ -126,11 +126,19 @@ public class Main1 {
                 pos = pesquisar.pesquisaSequencial(valor, vetor);
                 break;
             case 2:
-                Ordenadores.quicksort(vetor);
+                if (vetor.length < 1000) {
+                    Ordenadores.insercaoDireta(vetor);
+                } else {
+                    Ordenadores.quicksort(vetor);
+                }
                 pos = pesquisar.pesquisaMelhorada(valor, vetor);
                 break;
             case 3:
-                Ordenadores.quicksort(vetor);
+                if (vetor.length < 1000) {
+                    Ordenadores.insercaoDireta(vetor);
+                } else {
+                    Ordenadores.quicksort(vetor);
+                }
                 pos = pesquisar.pesquisaBinaria(valor, vetor);
                 break;
             case 4:
