@@ -6,7 +6,7 @@ public class Resultado {
     private long comparacoes;
     private long tempoExecucao;
 
-    public Resultado(int pos, int comp, long temp) {
+    public Resultado(int pos, long comp, long temp) {
         this.posicao = pos;
         this.comparacoes = comp;
         this.tempoExecucao = temp;

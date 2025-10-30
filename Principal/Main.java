@@ -1,4 +1,4 @@
-package principal;
+package Principal;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -34,16 +34,22 @@ public class Main {
                     vetor = carregarArquivo(sc);
                     break;
                 case 3:
-                    if (vetor != null) analisarVetor(vetor);
-                    else System.out.println("Carregue um vetor primeiro!");
+                    if (vetor != null)
+                        analisarVetor(vetor);
+                    else
+                        System.out.println("Carregue um vetor primeiro!");
                     break;
                 case 4:
-                    if (vetor != null) pesquisarValor(sc, vetor, pesquisar);
-                    else System.out.println("Carregue um vetor primeiro!");
+                    if (vetor != null)
+                        pesquisarValor(sc, vetor, pesquisar);
+                    else
+                        System.out.println("Carregue um vetor primeiro!");
                     break;
                 case 5:
-                    if (vetor != null) compararDesempenho(sc, vetor, pesquisar);
-                    else System.out.println("Carregue um vetor primeiro!");
+                    if (vetor != null)
+                        compararDesempenho(sc, vetor, pesquisar);
+                    else
+                        System.out.println("Carregue um vetor primeiro!");
                     break;
                 case 0:
                     executando = false;
@@ -69,8 +75,10 @@ public class Main {
         String nome = sc.nextLine();
         try {
             int[] vetor = ManipulaArquivo.lerArquivo(nome);
-            if (vetor != null) System.out.println("Vetor carregado com sucesso!");
-            else System.out.println("Arquivo vazio!");
+            if (vetor != null)
+                System.out.println("Vetor carregado com sucesso!");
+            else
+                System.out.println("Arquivo vazio!");
             return vetor;
         } catch (IOException e) {
             System.out.println("Erro ao carregar arquivo: " + e.getMessage());
@@ -81,8 +89,10 @@ public class Main {
     private static void analisarVetor(int[] vetor) {
         int maior = Integer.MIN_VALUE, menor = Integer.MAX_VALUE;
         for (int n : vetor) {
-            if (n > maior) maior = n;
-            if (n < menor) menor = n;
+            if (n > maior)
+                maior = n;
+            if (n < menor)
+                menor = n;
         }
 
         // Calcular moda
@@ -90,7 +100,8 @@ public class Main {
         for (int i = 0; i < vetor.length; i++) {
             int freq = 0;
             for (int j = 0; j < vetor.length; j++) {
-                if (vetor[j] == vetor[i]) freq++;
+                if (vetor[j] == vetor[i])
+                    freq++;
             }
             if (freq > freqMax) {
                 freqMax = freq;
@@ -98,7 +109,7 @@ public class Main {
             }
         }
 
-        System.out.println("🔎 Maior: " + maior + " | Menor: " + menor + " | Moda: " + moda);
+        System.out.println("Maior: " + maior + " | Menor: " + menor + " | Moda: " + moda);
     }
 
     private static void pesquisarValor(Scanner sc, int[] vetor, Pesquisar pesquisar) {
@@ -115,11 +126,19 @@ public class Main {
                 pos = pesquisar.pesquisaSequencial(valor, vetor);
                 break;
             case 2:
-                Ordenadores.quicksort(vetor);
+                if (vetor.length < 1000) {
+                    Ordenadores.insercaoDireta(vetor);
+                } else {
+                    Ordenadores.quicksort(vetor);
+                }
                 pos = pesquisar.pesquisaMelhorada(valor, vetor);
                 break;
             case 3:
-                Ordenadores.quicksort(vetor);
+                if (vetor.length < 1000) {
+                    Ordenadores.insercaoDireta(vetor);
+                } else {
+                    Ordenadores.quicksort(vetor);
+                }
                 pos = pesquisar.pesquisaBinaria(valor, vetor);
                 break;
             case 4:
